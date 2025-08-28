@@ -1,3 +1,6 @@
+
+// function for loved contact count
+
 let lovedContactCount = Number(document.getElementById('loved-contact-count').innerText);
 const loveIcons = document.getElementsByClassName('love-icon');
 
@@ -12,9 +15,25 @@ for (let loveIcon of loveIcons) {
 
 const callBtns = document.getElementsByClassName('call-btn');
 const historyContainer = document.getElementById('history-container');
+let rewardPoints = Number(document.getElementById('reward-points').innerText);
 
 for (let callBtn of callBtns) {
     callBtn.addEventListener('click', function () {
+
+        // function for reward points
+
+        if (rewardPoints >= 20) {
+            rewardPoints -= 20;
+            document.getElementById('reward-points').innerText = rewardPoints;
+        }
+
+        else if (rewardPoints < 20) {
+            alert("You don't have enough coins. Minimum 20 coins needed to start a call.")
+            return
+        }
+
+        // function for calling alert
+
         const serviceMainName = callBtn.parentNode.parentNode.childNodes[3].innerText;
         const serviceName = callBtn.parentNode.parentNode.childNodes[5].innerText;
         const serviceNumber = callBtn.parentNode.parentNode.childNodes[7].innerText;
@@ -23,6 +42,7 @@ for (let callBtn of callBtns) {
         alert(`📞 Calling ${serviceName} ${serviceNumber}...`)
 
         // function for history
+
         const newHistory = document.createElement('div');
         newHistory.innerHTML = (
             `<div class="mt-2 flex justify-between items-center p-2.5 bg-[#FAFAFA] rounded-[8px]">
