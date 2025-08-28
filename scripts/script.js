@@ -1,0 +1,1 @@
+document.getElementById('loved-contact-count')
