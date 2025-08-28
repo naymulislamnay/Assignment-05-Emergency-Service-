@@ -28,8 +28,8 @@ for (let callBtn of callBtns) {
         }
 
         else if (rewardPoints < 20) {
-            alert("You don't have enough coins. Minimum 20 coins needed to start a call.")
-            return
+            alert("You don't have enough coins. Minimum 20 coins needed to start a call.");
+            return;
         }
 
         // function for calling alert
@@ -37,9 +37,8 @@ for (let callBtn of callBtns) {
         const serviceMainName = callBtn.parentNode.parentNode.childNodes[3].innerText;
         const serviceName = callBtn.parentNode.parentNode.childNodes[5].innerText;
         const serviceNumber = callBtn.parentNode.parentNode.childNodes[7].innerText;
-        const now = new Date();
-        const localTime = now.toLocaleTimeString();
-        alert(`📞 Calling ${serviceName} ${serviceNumber}...`)
+        const localTime = new Date().toLocaleTimeString();
+        alert(`📞 Calling ${serviceName} ${serviceNumber}...`);
 
         // function for history
 
@@ -57,7 +56,7 @@ for (let callBtn of callBtns) {
                 </p>
             </div>`
         )
-        historyContainer.appendChild(newHistory)
+        historyContainer.appendChild(newHistory);
     })
 }
 
@@ -69,3 +68,24 @@ document.getElementById('clear-btn').addEventListener('click', function () {
 })
 
 
+// function for copy button
+
+const copyBtns = document.getElementsByClassName('copy-btn');
+let copyCount = Number(document.getElementById('copy-count').innerText);
+
+for (let copyBtn of copyBtns) {
+    copyBtn.addEventListener('click', async function () {
+        copyCount += 1;
+        document.getElementById('copy-count').innerText = copyCount;
+
+        const copyNumber = copyBtn.parentNode.parentNode.childNodes[7].innerText;
+
+        try {
+            await navigator.clipboard.writeText(copyNumber);
+            alert(`The number has been copied: ${copyNumber}`);
+        }
+        catch (err) {
+            console.error("Failed to copy: ", err);
+        }
+    });
+}
