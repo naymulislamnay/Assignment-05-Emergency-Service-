@@ -44,7 +44,7 @@ for (let callBtn of callBtns) {
 
         const newHistory = document.createElement('div');
         newHistory.innerHTML = (
-            `<div class="mt-0.5 md:mt-2 flex flex-col md:flex-row justify-between items-center p-0.5 md:p-2.5 bg-[#FAFAFA] rounded-[8px]">
+            `<div class="mt-0.5 md:mt-2 flex flex-col md:flex-row justify-between md:items-center p-0.5 md:p-2.5 bg-[#FAFAFA] rounded-[8px] text-left">
                 <div>
                     <h2 class="font-bold text-[10px] md:text-[16px]">
                         ${serviceMainName}
