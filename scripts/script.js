@@ -46,12 +46,12 @@ for (let callBtn of callBtns) {
         newHistory.innerHTML = (
             `<div class="mt-0.5 md:mt-2 flex flex-col md:flex-row justify-between md:items-center p-0.5 md:p-2.5 bg-[#FAFAFA] rounded-[8px] text-left">
                 <div>
-                    <h2 class="font-bold text-[10px] md:text-[16px]">
+                    <h2 class="font-bold text-[10px] md:text-[16px] inter-regular">
                         ${serviceMainName}
                     </h2>
-                    <p class="text-[#5C5C5C] text-[10px] md:text-[16px]">${serviceNumber}</p>
+                    <p class="text-[#5C5C5C] text-[10px] md:text-[16px] madurai-regular">${serviceNumber}</p>
                 </div>
-                <p class="text-[8px] md:text-[16px]">
+                <p class="text-[8px] md:text-[16px] madurai-regular">
                     ${localTime}
                 </p>
             </div>`
