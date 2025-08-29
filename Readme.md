@@ -20,7 +20,7 @@ First, Create an element using document.createElement(). Then, Set content or at
 
 Answer:
 Event bubbling means when an event is added on an element then, it first runs the event on that element, then go upward to its ancestors in the DOM. 
-Example: If someone click on a <button> inside a <div>, the click event will run on the button first, then bubble up to the div, then body, then document.
+Example: If someone click on a button inside a div, the click event will run on the button first, then bubble up to the div, then body, then document.
 
 
 
